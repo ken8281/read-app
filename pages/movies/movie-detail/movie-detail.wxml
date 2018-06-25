@@ -1,0 +1,58 @@
+<import src="../stars/stars-template.wxml" />
+
+<view class="container">
+  <image class="head-img" src="{{coverImg}}" mode='aspectFill' />
+
+  <view class='head-img-hover'  catchtap='onPicShow'>
+    <text class="main-title">{{originalTitle}}</text>
+    <text class="sub-title">{{countries}}.{{year}}</text>
+    <view class="like">
+      <text class="highlight-font">{{wishCount}}</text>
+      <text class="plain-font">人喜欢</text>
+      <text class="highlight-font">{{commentsCount}}</text>
+      <text class="plain-font">条评论</text>
+    </view>
+  </view>
+
+  <image class="movie-img" src="{{coverImg}}" catchtap='onPicShow' />
+
+  <view class="summary">
+    <text class="original-title">{{originalTitle}}</text>
+    <view class="flex-row">
+      <text class="mark">评分</text>
+         <template is="starsTemplate" data="{{stars,average}}" />   
+    </view>
+
+    <view class="flex-row">
+      <text class="mark">导演</text>
+      <text>{{directorName}}</text>
+    </view>
+
+    <view class="flex-row">
+      <text class="mark">影人</text>
+      <text>{{castsName}}</text>
+    </view>
+
+    <view class="flex-row">
+      <text class="mark">类型</text>
+      <text>{{genres}}</text>
+    </view>
+  </view>
+
+  <view class="synopsis">
+    <text class="synopsis-font">剧情简介</text>
+    <text class="summary-content">{{summary}}</text>
+  </view>
+
+  <view class="casts">
+    <text class="cast-font">影人</text>
+    <scroll-view class="cast-imgs"><!-- 设置scroll-view，flex失效 -->
+      <block wx:for="{{casts}}" wx:for-item="cast" wx:key="{{index}}">
+        <view class="cast-container">
+          <image class="cast-img" src='{{cast.avatars.large}}' />
+          <text class="cast-name">{{cast.name}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

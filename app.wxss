@@ -1,0 +1,4 @@
+text,input {
+  font: 24rpx "MicroSoft Yahei"，sans-serif;
+  color: #666;
+}

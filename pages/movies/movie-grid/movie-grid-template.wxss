@@ -1,0 +1,11 @@
+@import "../movie/movie-template.wxss";
+
+.single-view-container{
+    float:left;
+    margin-bottom: 40rpx;
+}
+
+.grid-container{
+    /* height: 1300rpx; scroll-view才需要设置*/
+    margin:40rpx 0 40rpx 8rpx;
+}
